@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-	<title>Fhoenix Logistic</title>
+	<title>Comex</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -56,67 +56,70 @@
 	        <!-- !PAGE CONTENT! -->
 	        <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 	
-	          <!-- Header -->
-	          <header class="w3-container" style="padding-top:22px">
-	            <h5><b><i class="fa fa-dashboard"></i> Mi sala de trabajo</b></h5>
-	          </header>
-			<div class="btn-group">
-	          <div class="w3-row-padding w3-margin-bottom">
-	            <div class="w3-quarter">
-	              <div id="ingreso" class="w3-container w3-red w3-padding-16 w3-button" onclick="getElementbyId('ingresoCliente')">
-	                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
-	                <div class="w3-right">
-	                </div>
-	                <div class="w3-clear"></div>
-	                <h4>Ingreso nuevo cliente</h4>
-	              </div>
-	            </div>
-	            <div class="w3-quarter">
-	              <div class="w3-container w3-blue w3-button w3-padding-16" onclick="getElementbyId('ingresoBL')">
-	                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
-	                <div class="w3-right">
-	                </div>
-	                <div class="w3-clear"></div>
-	                <h4>Ingreso BL</h4>
-	              </div>
-	            </div>
-	            <div class="w3-quarter">
-	              <div class="w3-container w3-teal w3-padding-16 w3-button" onclick="getElementbyId('ingresoProveedor')">
-	                <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
-	                </div>
-	                <div class="w3-clear"></div>
-	                <h4>Nuevo Proveedor</h4>
-	              </div>
-	            </div>
-	            <div class="w3-quarter">
-	              <div class="w3-container w3-orange w3-text-white w3-padding-16 w3-button" onclick="">
-	                <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
-	                <div class="w3-right">
-	                  <h3>50</h3>
-	                </div>
-	                <div class="w3-clear"></div>
-	                <h4>Usuarios</h4>
-	              </div>
-	            </div>
-	          </div>
-	         </div>
+			          <!-- Header -->
+			          <header class="w3-container" style="padding-top:22px">
+			            <h5><b><i class="fa fa-dashboard"></i> Mi sala de trabajo</b></h5>
+			          </header>
+					<div class="btn-group w3-row-padding w3-margin-bottom">
+				            <div class="w3-quarter btn-group-addon">
+				              <div id="ingreso" class="w3-container w3-red w3-padding-16 w3-button" onclick="muestra_oculta('ingresoCli')">
+				                <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+				                <div class="w3-right"></div>
+				                <div class="w3-clear"></div>
+				                <h4>Ingreso nuevo cliente</h4>
+				              </div>
+				    		</div>
+							<div class="w3-quarter btn-group-addon">				              
+							<div class="w3-container w3-blue w3-button w3-padding-16" onclick="muestra_oculta2('ingresoBLs')">
+				                <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+				                <div class="w3-right">
+				                </div>
+				                <div class="w3-clear"></div>
+				                <h4>Ingreso BL</h4>
+				              </div>
+				            </div>
+							<div class="w3-quarter btn-group-addon">				              
+							<div class="w3-container w3-teal w3-padding-16 w3-button" onclick="muestra_oculta3('ingresoProveedores')">
+				                <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+				                <div class="w3-clear"></div>
+				                <h4>Nuevo Proveedor</h4>
+				              </div>
+				         	</div>
+							<div class="w3-quarter btn-group-addon">				              
+							<div class="w3-container w3-orange w3-text-white w3-padding-16 w3-button" onclick="">
+				                <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
+				                <div class="w3-right">
+				                  <h3>50</h3>
+				                </div>
+				                <div class="w3-clear">
+				                <h4>Usuarios</h4>
+				              </div>
+				            </div>
+				          </div>
+				        </div>
 	          
 	          <div class="w3-panel">
 	            <div class="w3-row-padding" style="margin:0 -16px">
-	              <div id="ingresoCiente" th:replace="Fragments/IngresoCliente :: ingresoCliente">&nbsp;</div>
-	              <div id="ingresoBL" th:replace="Fragments/IngresoBL :: ingresoBL">&nbsp;</div>
-	              <div id="ingresoProveedor" th:replace="Fragments/IngresoProveedor :: ingresoProveedor">&nbsp;</div>
+	              <div id="ingresoCli">
+	             	<div th:replace="Fragments/IngresoCliente :: ingresoCliente" hidden="true">&nbsp;</div>
+	              </div>
+	              <div id="ingresoBLs">
+	              <div th:replace="Fragments/IngresoBL:: ingresoBL" hidden="true">&nbsp;</div> 
+	              </div>
+	              <div id="ingresoProveedores">
+	             	<div th:replace="Fragments/IngresoProveedor :: ingresoProveedor" hidden="true">&nbsp;</div>
+	              </div>
 	          </div>
-	          
-	
+	    	</div>
+
 	          <!-- Footer -->
 	          <footer class="w3-container w3-padding-16 w3-light-grey">
-	            <h4>FOOTER</h4>
+	            <h4></h4>
 	            <p>Producido por <a href="https://github.com/Developerweed" target="_blank">Developerweed</a></p>
 	          </footer>
 	
 	          <!-- End page content -->
-	        </div>
+	    </div>
 	
 	        <script>
 	        // Get the Sidebar
@@ -142,8 +145,6 @@
 	          overlayBg.style.display = "none";
 	        }
 	        </script>
-	<script src="/js/ingresoClientes.js" th:href="@{/js/ingresoClientes.js}"></script>
-	<script src="/js/ingresoProveedor.js" th:href="@{/js/ingresoProveedor.js}"></script>
-	<script src="/js/ingresoBL.js" th:href="@{/js/ingresoBL.js}"></script>
+	<script src="/insertFragController.js"></script>
 	</body>
 </html>
